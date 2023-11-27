@@ -9,5 +9,6 @@ public class ApiMapperProfile : Profile
     public ApiMapperProfile()
     {
         CreateMap<CreateTranslatorRequest, Translator>();
+        CreateMap<CreateTranslationJobRequest, TranslationJob>();
     }
 }

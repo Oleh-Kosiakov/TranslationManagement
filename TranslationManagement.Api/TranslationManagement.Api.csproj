@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\External.ThirdParty.Services\External.ThirdParty.Services.csproj" />
     <ProjectReference Include="..\TranslationManagement.Bll\TranslationManagement.Bll.csproj" />
     <ProjectReference Include="..\TranslationManagement.Dal\TranslationManagement.Dal.csproj" />
     <ProjectReference Include="..\TranslationManagement.Domain\TranslationManagement.Domain.csproj" />

@@ -11,5 +11,9 @@ public interface IUnitOfWork : IDisposable
 
     ITranslatorRepository TranslatorRepository { get; }
 
-    Task SaveChangesAsync();
+    /// <summary>
+    /// Saves the stashed changes in the DB
+    /// </summary>
+    /// <returns>Returns the number of the affected entities</returns>
+    Task<int> SaveChangesAsync(CancellationToken ct = default);
 }

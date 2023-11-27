@@ -6,7 +6,7 @@ using TranslationManagement.Interfaces.Dal.Repositories;
 
 namespace TranslationManagement.Dal;
 
-public class UnitOfWork : IUnitOfWork
+public sealed class UnitOfWork : IUnitOfWork
 {
     private readonly TranslationsDbContext _translationsDbContext;
     private readonly IMapper _mapper;
@@ -17,18 +17,16 @@ public class UnitOfWork : IUnitOfWork
         _mapper = mapper;
     }
 
-    private ITranslationJobRepository _translationJobRepository;
+    private ITranslationJobRepository? _translationJobRepository;
     public ITranslationJobRepository TranslationJobRepository =>
         _translationJobRepository ??= new TranslationJobRepository(_translationsDbContext, _mapper);
 
-    private ITranslatorRepository _translatorRepository;
+    private ITranslatorRepository? _translatorRepository;
     public ITranslatorRepository TranslatorRepository =>
         _translatorRepository ??= new TranslatorRepository(_translationsDbContext, _mapper);
 
-    public async Task SaveChangesAsync()
-    {
-        await _translationsDbContext.SaveChangesAsync();
-    }
+    public async Task<int> SaveChangesAsync(CancellationToken ct = default) => 
+        await _translationsDbContext.SaveChangesAsync(ct);
 
     public void Dispose()
     {

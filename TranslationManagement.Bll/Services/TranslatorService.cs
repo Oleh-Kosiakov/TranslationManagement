@@ -21,18 +21,18 @@ public class TranslatorService : ITranslatorService
     public Task<IEnumerable<Translator>> GetAllAsync(CancellationToken ct = default) =>
         _unitOfWork.TranslatorRepository.GetAsync(ct: ct);
 
-    public Task<IEnumerable<Translator>> GetTranslatorsByName(string name, CancellationToken ct = default) =>
+    public Task<IEnumerable<Translator>> GetTranslatorsByNameAsync(string name, CancellationToken ct = default) =>
         _unitOfWork.TranslatorRepository.GetAsync(t => string.Compare(t.Name, name, StringComparison.OrdinalIgnoreCase) == 0, ct);
 
-    public async Task AddTranslator(Translator translator, CancellationToken ct = default)
+    public async Task AddTranslatorAsync(Translator translator, CancellationToken ct = default)
     {
         await _unitOfWork.TranslatorRepository.CreateAsync(translator, ct).ConfigureAwait(false);
-        await _unitOfWork.SaveChangesAsync().ConfigureAwait(false);
+        await _unitOfWork.SaveChangesAsync(ct).ConfigureAwait(false);
 
         _logger.LogInformation("Translator entity was created.");
     }
 
-    public async Task UpdateTranslatorStatus(
+    public async Task UpdateTranslatorStatusAsync(
         int translatorId,
         TranslatorStatus translatorStatus,
         CancellationToken ct = default)
@@ -59,7 +59,7 @@ public class TranslatorService : ITranslatorService
         translator.Status = translatorStatus;
 
         await _unitOfWork.TranslatorRepository.UpdateAsync(translator, ct).ConfigureAwait(false);
-        await _unitOfWork.SaveChangesAsync().ConfigureAwait(false);
+        await _unitOfWork.SaveChangesAsync(ct).ConfigureAwait(false);
 
         _logger.LogInformation("Status of translator with Id {Id} has changed to {newStatus}.", translator, translatorStatus);
     }

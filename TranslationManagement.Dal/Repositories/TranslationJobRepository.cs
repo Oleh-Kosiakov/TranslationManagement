@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Linq.Expressions;
+using AutoMapper;
 using TranslationManagement.Dal.EF;
 using TranslationManagement.Domain.Entities;
 using TranslationManagement.Interfaces.Dal.Repositories;
@@ -17,6 +18,16 @@ public class TranslationJobRepository : ITranslationJobRepository
     {
         _translationsDbContext = translationsDbContext;
         _mapper = mapper;
+    }
+
+    public Task<IEnumerable<TranslationJob>> GetAsync(Expression<Func<TranslationJob, bool>>? predicate = default, CancellationToken ct = default)
+    {
+        if (predicate == null)
+        {
+            return Task.FromResult(_translationsDbContext.TranslationJobsSet.ToList().AsEnumerable());
+        }
+
+        return Task.FromResult(_translationsDbContext.TranslationJobsSet.Where(predicate).ToList().AsEnumerable());
     }
 
     public Task CreateAsync(TranslationJob entity, CancellationToken ct)

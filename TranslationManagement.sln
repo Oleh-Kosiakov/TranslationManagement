@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationManagement.Domain", "TranslationManagement.Domain\TranslationManagement.Domain.csproj", "{1A4AE450-F626-49D2-BE69-0876DD8C77DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationManagement.Domain", "TranslationManagement.Domain\TranslationManagement.Domain.csproj", "{1A4AE450-F626-49D2-BE69-0876DD8C77DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationManagement.Dal", "TranslationManagement.Dal\TranslationManagement.Dal.csproj", "{631BA6ED-E8A6-4FE9-964D-70982608115E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationManagement.Dal", "TranslationManagement.Dal\TranslationManagement.Dal.csproj", "{631BA6ED-E8A6-4FE9-964D-70982608115E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationManagement.Interfaces", "TranslationManagement.Interfaces\TranslationManagement.Interfaces.csproj", "{23334CEB-76EA-48D8-9157-3FCF0417B6A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationManagement.Interfaces", "TranslationManagement.Interfaces\TranslationManagement.Interfaces.csproj", "{23334CEB-76EA-48D8-9157-3FCF0417B6A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationManagement.Bll", "TranslationManagement.Bll\TranslationManagement.Bll.csproj", "{05618EB0-F55C-4299-9617-44F2D8FC6CAC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationManagement.Bll", "TranslationManagement.Bll\TranslationManagement.Bll.csproj", "{05618EB0-F55C-4299-9617-44F2D8FC6CAC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationManagement.Api", "TranslationManagement.Api\TranslationManagement.Api.csproj", "{6FF42B5B-0AB4-41A8-97C8-06821A13C381}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationManagement.Api", "TranslationManagement.Api\TranslationManagement.Api.csproj", "{6FF42B5B-0AB4-41A8-97C8-06821A13C381}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TranslationManagement.Infrastructure", "TranslationManagement.Infrastructure\TranslationManagement.Infrastructure.csproj", "{304809EA-68E4-4271-9D09-1AEB088E6678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TranslationManagement.Infrastructure", "TranslationManagement.Infrastructure\TranslationManagement.Infrastructure.csproj", "{304809EA-68E4-4271-9D09-1AEB088E6678}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Db", "Db", "{C6AC49AC-C197-412B-B597-22F229B7E160}"
 	ProjectSection(SolutionItems) = preProject
@@ -21,6 +21,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Db", "Db", "{C6AC49AC-C197-
 		TranslationAppDatabase.db-shm = TranslationAppDatabase.db-shm
 		TranslationAppDatabase.db-wal = TranslationAppDatabase.db-wal
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "External.ThirdParty.Services", "External.ThirdParty.Services\External.ThirdParty.Services.csproj", "{A6C46314-4A63-4B62-8FFC-CDD96E8B22D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,10 @@ Global
 		{304809EA-68E4-4271-9D09-1AEB088E6678}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{304809EA-68E4-4271-9D09-1AEB088E6678}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{304809EA-68E4-4271-9D09-1AEB088E6678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6C46314-4A63-4B62-8FFC-CDD96E8B22D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6C46314-4A63-4B62-8FFC-CDD96E8B22D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6C46314-4A63-4B62-8FFC-CDD96E8B22D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6C46314-4A63-4B62-8FFC-CDD96E8B22D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
